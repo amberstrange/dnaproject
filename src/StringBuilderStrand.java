@@ -43,7 +43,7 @@ public class StringBuilderStrand implements IDnaStrand {
 		// code identical to StringStrand, both String and StringBuilder
 		// support .substring and .indexOf
 		
-		while ((pos = search.indexOf(enzyme, pos)) >= 0) {
+		while ((pos = search.indexOf(enzyme, start)) >= 0) {
 			if (first) {
 				ret = getInstance(search.substring(start, pos));
 				first = false;

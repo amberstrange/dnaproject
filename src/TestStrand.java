@@ -1,5 +1,8 @@
 import static org.junit.Assert.*;
 import org.junit.*;
+
+import LinkStrand.Node;
+
 import java.util.Iterator;
 
 /**
@@ -19,6 +22,8 @@ public class TestStrand {
 	private static String[] strs = { "aggtccg", "aaagggtttcccaaagggtttccc", "a", "g",
 			"aggtccgttccggttaaggagagagagagagttt" };
 
+	
+
 	/**
 	 * Return a strand to test by other JUnit tests
 	 * 
@@ -28,8 +33,8 @@ public class TestStrand {
 	 */
 	public IDnaStrand getNewStrand(String s) {
 		//return new StringStrand(s);
-		//return new LinkStrand(s);
-		return new StringBuilderStrand(s);
+		return new LinkStrand(s);
+		//return new StringBuilderStrand(s);
 	}
 
 	/**
@@ -84,7 +89,10 @@ public class TestStrand {
 					+ "simple cases. The test case failed on was " + s, rev.toString(), rs);
 		}
 	}
-
+	
+	
+	
+	
 	@Test(timeout = 10000)
 	/** This test checks if append works correctly for simple cases */
 	public void testAppend() {
